@@ -21,7 +21,7 @@ describe User do
   it { should respond_to(:feed) }
 
   it { should be_valid }
-    it { should_not be_admin }
+  it { should_not be_admin }
 
   describe "with admin attribute set to 'true'" do
     before do
