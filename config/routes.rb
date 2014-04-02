@@ -1,4 +1,5 @@
 ThirdApp::Application.routes.draw do
+<<<<<<< HEAD
    resources :users
   # resources :sessions, only: [:new, :create, :destroy]
 
@@ -7,6 +8,11 @@ ThirdApp::Application.routes.draw do
   resources :relationships, :only => [:create, :destroy]
   
  
+=======
+  resources :users
+  resources :sessions, only: [:new, :create, :destroy]
+
+>>>>>>> master
   root  'static_pages#home'
   match '/signup',  to: 'users#new',            via: 'get'
   match '/help',    to: 'static_pages#help',    via: 'get'
