@@ -26,6 +26,7 @@ class User < ActiveRecord::Base
   end
 
   def feed
+<<<<<<< HEAD
     Micropost.from_users_followed_by(self)
   end
 
@@ -40,6 +41,9 @@ class User < ActiveRecord::Base
   
   def unfollow!(other_user)
     relationships.find_by(followed_id: other_user.id).destroy!
+=======
+    Micropost.where("user_id = ?", id)
+>>>>>>> master
   end
 
   private
