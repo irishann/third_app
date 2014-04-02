@@ -47,11 +47,4 @@ describe "Static pages" do
     click_link "sample app"
     expect(page).to have_content('sample app')
   end
-end
-
-  
-
-
-
-
- 
+end 
