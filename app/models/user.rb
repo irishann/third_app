@@ -20,7 +20,6 @@ class User < ActiveRecord::Base
   end
 
   def feed
-    # Это предварительное решение. См. полную реализацию в "Following users".
     Micropost.where("user_id = ?", id)
   end
 

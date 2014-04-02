@@ -152,7 +152,7 @@ describe User do
     end
 
       describe "status" do
-      let(:unfollowed_post) do
+        let(:unfollowed_post) do
         FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
       end
 
