@@ -1,14 +1,11 @@
 ThirdApp::Application.routes.draw do
-<<<<<<< HEAD
-   
+  
   resources :users do
     member do
       get :following, :followers
     end
   end
   # resources :sessions, only: [:new, :create, :destroy]
-=======
->>>>>>> master
 
   resources :users
   resources :sessions,      :only => [:new, :create, :destroy]

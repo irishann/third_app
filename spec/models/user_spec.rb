@@ -150,8 +150,8 @@ describe User do
 
     describe "status" do
       let(:unfollowed_post) do
-      FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
-    end
+        FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
+      end
       let(:followed_user) { FactoryGirl.create(:user) }
 
       before do
@@ -168,7 +168,7 @@ describe User do
         end
       end
     end
-  end
+  
   
     it "should destroy associated microposts" do
       microposts = @user.microposts
@@ -178,33 +178,35 @@ describe User do
         expect(Micropost.where(id: micropost.id)).to be_empty
       end
     end
-  
-  describe "following" do
-    let(:other_user) { FactoryGirl.create(:user) }
-    before do
-      @user.save
-      @user.follow!(other_user)
-    end
 
-<<<<<<< HEAD
+  
+    describe "following" do
+      let(:other_user) { FactoryGirl.create(:user) }
+      before do
+        @user.save
+        @user.follow!(other_user)
+      end
+
       it { should be_following(other_user) }
       its(:followed_users) { should include(other_user) }
 
       describe "followed user" do
         subject { other_user }
         its(:followers) { should include(@user) }
-=======
-      describe "status" do
-        let(:unfollowed_post) do
-        FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
->>>>>>> master
+
+        describe "status" do
+          let(:unfollowed_post) do
+            FactoryGirl.create(:micropost, user: FactoryGirl.create(:user))
+          end
+        end
+
+        describe "and unfollowing" do
+          before { @user.unfollow!(other_user) }
+
+          it { should_not be_following(other_user) }
+          its(:followed_users) { should_not include(other_user) }   
+        end
       end
-
-    describe "and unfollowing" do
-      before { @user.unfollow!(other_user) }
-
-      it { should_not be_following(other_user) }
-      its(:followed_users) { should_not include(other_user) }   
     end
   end
 end

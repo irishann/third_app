@@ -118,10 +118,7 @@ describe "Authentication" do
       end
     end
   
-<<<<<<< HEAD
-=======
 
->>>>>>> master
     describe "as wrong user" do
       let(:user) { FactoryGirl.create(:user) }
       let(:wrong_user) { FactoryGirl.create(:user, email: "wrong@example.com") }
@@ -139,8 +136,5 @@ describe "Authentication" do
       end
     end
   end
-<<<<<<< HEAD
 end
-=======
-end
->>>>>>> master
+
